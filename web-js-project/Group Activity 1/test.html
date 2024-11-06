@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Message</title>
+    <style>
+        /* Basic styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #3498db; /* Blue background */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Success message container */
+        .success-container {
+            background-color: #8bc34a;
+            color: white;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Check icon */
+        .success-container .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        /* Success text */
+        .success-container .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Description */
+        .success-container .description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Continue button */
+        .success-container .continue-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #8bc34a;
+            color: white;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        .success-container .continue-button:hover {
+            background-color: #7cb342;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="icon">✔</div> <!-- Check icon -->
+        <div class="title">SUCCESS</div>
+        <div class="description">
+            Congratulations, your account has been successfully created.
+        </div>
+        <a href="#" class="continue-button">Continue</a>
+    </div>
+</body>
+</html>
