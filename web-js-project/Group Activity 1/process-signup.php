@@ -63,7 +63,8 @@ if (isset($_POST["submit"])){
     $stmt->bind_param("sss", $usernameSignup, $email, $hashedPassword);
 
     if ($stmt->execute()) {
-        echo "Sign Up Successful";
+        header("Location: signup-success.html");
+        exit;
     } else { 
        if ($mysqli->errno === 1062){
         echo "<script>
