@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $mysqli = require __DIR__ . "/database.php";
     
     $sql = sprintf("SELECT * FROM user
-                    WHERE email = '%s'",
-                   $mysqli->real_escape_string($_POST["email"]));
+                    WHERE name = '%s'",
+                   $mysqli->real_escape_string($_POST["username"]));
     
     $result = $mysqli->query($sql);
     
@@ -22,7 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             session_regenerate_id();
             
-            die("Login Success");
+            header("Location: act.html");
+            exit;
             
         }
     }
@@ -37,14 +38,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <link rel="stylesheet" href="style-login.css">
+    <link rel="stylesheet" href="css/style-login.css">
 </head>
 <body>
     <div class="login-container">
         <h2>Login</h2>
+
+        <?php if ($is_invalid): ?>
+            <em class="invalid"> Invalid Login </em>
+        <?php endif; ?>
+
         <form  method="post">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" placeholder="Username" required>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username" required>
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Password" required>

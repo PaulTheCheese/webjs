@@ -1,0 +1,273 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #54473F;
+    color: #E9EED9;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #ffffff; /* Darker background */
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #E9EED9; /* Light color for branding */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #424141; /* Light color for links */
+    font-size: 1.3rem;
+    margin: 0 10px; /* Add spacing between links */
+    transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #9A7E6F; /* Change color on hover */
+    background-color: transparent; /* Keep background transparent */
+    border-bottom: 2px solid #9A7E6F; /* Add a bottom border on hover */
+    border-radius: 0;
+    transform: translateY(-3px); /* Creates the levitation effect */
+    padding-bottom: 8px; /* Adjust spacing for hover effect */
+}
+
+/* Navbar Toggler (Mobile) */
+.navbar-toggler {
+    border: 2px solid #E9EED9; /* Outline the button */
+}
+
+.navbar-toggler-icon {
+    background-color: #E9EED9; /* Light color for the icon */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+section {
+    padding: 50px 20px;
+    min-height: 100vh;
+    text-align: center;
+}
+
+#hero {
+    
+    background-image: url("../assets/hero-section.webp");
+    background-size: cover;
+    height: 200px;
+    color: #E9EED9;
+    position: relative;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-top-left-radius: 100px ;
+    border-bottom-right-radius: 100px ;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+};
+
+#hero h1 {
+    margin: 0;
+    padding-top: 150px;
+    font-size: 3rem;
+}
+
+#hero button {
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid #9A7E6F;
+    font-size: 1.2rem;
+    background-color: #9A7E;
+    color: #54473F;
+    cursor: pointer;
+}
+
+#content1, #content2 {
+    background-color: #f4f4f4;
+}
+
+#footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer input {
+    padding: 10px;
+    margin: 5px;
+    width: 80%;
+    max-width: 400px;
+}
+
+#footer button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden-content {
+    display: none;
+    padding: 20px;
+    background-color: #E9EED9;
+    color: #54473F;
+    margin-top: 20px;
+}
+
+.features {
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    border: #333;
+}
+
+.featuresSec {
+    min-height: 800px;
+    border: 8px;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Basic layout for the feature section */
+#content1 {
+    background-color: #f9f9f9;
+    padding: 10px 0;
+}
+
+#content1 h2 {
+    color: #333;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+
+/* Styling for the feature box container */
+.feature-box {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    background-color: #fff;
+    margin: 14%;
+}
+
+.feature-box:hover {
+    transform: translateY(-2px);
+}
+
+/* Styling for the feature image */
+.feature-box img {
+    width: 400px;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+    transition: opacity 0.3s ease;
+    
+}
+
+.feature-box:hover img {
+    opacity: 0.9;
+}
+
+/* Styling for the feature description */
+.feature-description {
+    padding: 10px;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.feature-description p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Button styling within the feature description */
+.feature-description .btn {
+    background-color: #9A7E;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: #fff;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.feature-description .btn:hover {
+    background-color: rgba(130, 146, 101, 0.933);
+}
+
+/* Styling for the extra description box on the right */
+.extra-description {
+    padding: 20px;
+    margin-top: 70px;
+    color: #555;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensures boxes are full width in column */
+    height: 130px; /* Fixed height to keep boxes the same size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Ensures text doesn't overflow */
+}
+
+/* Optional: Adjust font and spacing within boxes for consistency */
+.extra-description p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0; /* Remove default margins for consistent spacing */
+}

@@ -3,58 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page with jQuery</title>
-    <link rel="stylesheet" href="landingpage.css">
+    <title>Bootstrap Landing Page</title>
 
-    <!-- jQuery CDN -->
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery and Bootstrap JS CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Custom CSS (Optional) -->
+    <link rel="stylesheet" href="css/landingpage.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#content1">Features</a></li>
-                <li><a href="#footer">Contact</a></li>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">CIIT RESTAURANT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#hero"><b>Home</b></a></li>
+                <li class="nav-item"><a class="nav-link" href="#content1"><b>Features</b></a></li>
+                <li class="nav-item"><a class="nav-link" href="#footer"><b>Contact</b></a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="hero">
-        <h1>Welcome to Our Landing Page</h1>
-        <button id="learnMore">Learn More</button>
-        <div id="hiddenContent" class="hidden-content">Here is more about our awesome website!</div>
+    <section id="hero" class="d-flex align-items-center text-center bg-primary text-white vh-100">
+        <div class="container">
+            <h1>Welcome to Our Landing Page</h1>
+            <p class="lead">Discover what we have to offer with ease.</p>
+            <button id="learnMore" class="btn btn-light mt-3">Learn More</button>
+            <div id="hiddenContent" class="mt-3 hidden-content" style="display: none;">Here is more about our awesome website!</div>
+        </div>
     </section>
 
-    <!-- Content Section 1 -->
-    <section id="content1">
-        <h2>Our Features</h2>
-        <p>Discover the amazing features of our product by exploring the sections below.</p>
-        <button id="loadFeatures">Load More Features</button>
-        <div id="extraFeatures" class="hidden-content">We offer fast performance, great UI, and top-notch security!</div>
+    <!-- Content Section 1: Features -->
+    <section id="content1" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Features</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="feature-box">
+                    <img src="/assets/chicken-salad.webp" alt="Feature Image">
+                    <div class="feature-description">
+                        <p>This is a description of one of our amazing features. It explains what makes this feature unique and beneficial.</p>
+                        <button id="showMoreFeature" class="btn btn-primary">Show More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="extraDescription1" class="extra-description" style="display: none;">
+                    <p>More details about this feature: Unique value and benefits explained.</p>
+                </div>
+                <div id="extraDescription2" class="extra-description" style="display: none;">
+                    <p>Additional insights: This feature enhances user experience with its efficient design.</p>
+                </div>
+                <div id="extraDescription3" class="extra-description" style="display: none;">
+                    <p>Extra value: Comprehensive support ensures reliability and satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Content Section 2: Why Choose Us -->
+    <section id="content2" class="bg-light py-5 text-center">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <p id="chooseUs" class="lead"></p>
+            <button id="whyUS" class="btn btn-primary mt-3">Click here!</button>
+        </div>
     </section>
 
-    <!-- Content Section 2 -->
-    <section id="content2">
-        <h2>Why Choose Us</h2>
-        <p id="chooseUs"></p>
-        <button id="whyUS">Click here!</button>
-    </section>
+    <!-- Footer Section: Contact Us -->
+    <footer id="footer" class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <h2>Contact Us</h2>
+            <form id="contactForm" class="mx-auto" style="max-width: 500px;">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <p id="formMessage" class="mt-3"></p>
+        </div>
+    </footer>
 
-    <!-- Footer Section -->
-    <section id="footer">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <button type="submit">Submit</button>
-        </form>
-        <p id="formMessage"></p>
-    </section>
-
+    <!-- Custom Script -->
     <script>
         $(document).ready(function() {
             // Smooth scroll for navigation links
@@ -71,24 +114,34 @@
                 $('#hiddenContent').slideToggle();
             });
 
-            // Load extra features dynamically
-            $('#loadFeatures').click(function() {
-                $('#extraFeatures').fadeToggle();
+            // Show extra description in Features section
+            $('#showMoreFeature').click(function() {
+                $('#extraDescription').fadeToggle();
+            });
+
+            $('#showMoreFeature').click(function() {
+                $('#extraDescription1').fadeIn(400);
+                setTimeout(function() {
+                    $('#extraDescription2').fadeIn(400);
+                }, 600); // Delay for the second description
+                setTimeout(function() {
+                    $('#extraDescription3').fadeIn(400);
+                }, 1200); // Delay for the third description
             });
 
             $('#whyUS').click(function() {
                 $('#chooseUs').text('We stand out because of our customer support, innovative features, and reliability');
             });
 
+            // Hover effect for Learn More button
             $('#learnMore').hover(
                 function() {
-                $(this).css('background-color', '#CBD2A4').css('color', '#54473F')},
+                    $(this).css('background-color', '#CBD2A4').css('color', '#54473F');
+                },
                 function(){
-                $(this).css('background-color', '#54473F').css('color', '#CBD2A4')
-                
-                
-            });
-
+                    $(this).css('background-color', '').css('color', '');
+                }
+            );
 
             // Form validation and submission handling
             $('#contactForm').submit(function(e) {
@@ -97,9 +150,9 @@
                 const email = $('#email').val();
                 
                 if (name && email) {
-                    $('#formMessage').text(`Thank you, ${name}. We will contact you at ${email}.`);
+                    $('#formMessage').text(`Thank you, ${name}. We will contact you at ${email}.`).addClass('text-success');
                 } else {
-                    $('#formMessage').text('Please fill out the form completely.');
+                    $('#formMessage').text('Please fill out the form completely.').addClass('text-danger');
                 }
             });
         });

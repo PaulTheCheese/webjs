@@ -3,97 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Message</title>
-    <style>
-        /* Basic styling */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #3498db; /* Blue background */
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+    <title>Bootstrap Landing Page</title>
 
-        /* Success message container */
-        .success-container {
-            background-color: #ffffff;
-            color: white;
-            width: 300px;
-            height: 320px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-        /* Check icon */
-        .icon {
-            font-size: 48px;
-            margin-bottom: 10px;
-            align-items: center;
-            padding-top: 30px;
-        }
-
-        /* Success text */
-        .success-container .title {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 25px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* Description */
-        .success-container .description {
-            color: #666;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 15px;
-            margin-bottom: 18px;
-            margin-top:26px;
-            margin-left: 30px;
-            margin-right: 30px;
-        }
-
-        /* Continue button */
-        .success-container .continue-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #8bc34a;
-            color: white;
-            font-size: 14px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
-        }
-
-        .success-container .continue-button:hover {
-            background-color: #7cb342;
-        }
-
-        #white{
-            background-color: aliceblue;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            height: 170px;
-            background-image: linear-gradient(to right, #8bc34a, #73a33d);
-        }
-    </style>
+    <!-- jQuery and Bootstrap JS CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Custom CSS (Optional) -->
+    <link rel="stylesheet" href="css/landingpage.css">
 </head>
 <body>
-    <div class="success-container">
-        <section id="white">
-        
-        <div class="icon">✔</div> <!-- Check icon -->
-        <div class="title">SUCCESS</div>
-        
-        </section>
-        <div class="description">
-            Congratulations, your account has been successfully created.
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">CIIT RESTAURANT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#hero"><b>Home</b></a></li>
+                <li class="nav-item"><a class="nav-link" href="#content1"><b>Features</b></a></li>
+                <li class="nav-item"><a class="nav-link" href="#footer"><b>Contact</b></a></li>
+            </ul>
         </div>
-        <a href="login.php" class="continue-button">Continue</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center text-center bg-primary text-white vh-100">
+        <div class="container">
+            <h1>Welcome to Our Landing Page</h1>
+            <p class="lead">Discover what we have to offer with ease.</p>
+            <button id="learnMore" class="btn btn-light mt-3">Learn More</button>
+            <div id="hiddenContent" class="mt-3 hidden-content" style="display: none;">Here is more about our awesome website!</div>
+        </div>
+    </section>
+
+    <!-- Content Section 1: Features -->
+    <section id="content1" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Features</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="feature-box">
+                    <img src="/assets/chicken-salad.webp" alt="Feature Image">
+                    <div class="feature-description">
+                        <p>This is a description of one of our amazing features. It explains what makes this feature unique and beneficial.</p>
+                        <button id="showMoreFeature" class="btn btn-primary">Show More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="extraDescription1" class="extra-description" style="display: none;">
+                    <p>More details about this feature: Unique value and benefits explained.</p>
+                </div>
+                <div id="extraDescription2" class="extra-description" style="display: none;">
+                    <p>Additional insights: This feature enhances user experience with its efficient design.</p>
+                </div>
+                <div id="extraDescription3" class="extra-description" style="display: none;">
+                    <p>Extra value: Comprehensive support ensures reliability and satisfaction.</p>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+
+    <!-- Content Section 2: Why Choose Us -->
+    <section id="content2" class="bg-light py-5 text-center">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <p id="chooseUs" class="lead"></p>
+            <button id="whyUS" class="btn btn-primary mt-3">Click here!</button>
+        </div>
+    </section>
+
+    <!-- Footer Section: Contact Us -->
+    <footer id="footer" class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <h2>Contact Us</h2>
+            <form id="contactForm" class="mx-auto" style="max-width: 500px;">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <p id="formMessage" class="mt-3"></p>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script>
+        $(document).ready(function() {
+            // Smooth scroll for navigation links
+            $('nav ul li a').click(function(e) {
+                e.preventDefault();
+                const targetSection = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(targetSection).offset().top - 50
+                }, 800);
+            });
+
+            // Show more content when "Learn More" button is clicked
+            $('#learnMore').click(function() {
+                $('#hiddenContent').slideToggle();
+            });
+
+            // Show extra description in Features section
+            $('#showMoreFeature').click(function() {
+                $('#extraDescription').fadeToggle();
+            });
+
+            $('#showMoreFeature').click(function() {
+                $('#extraDescription1').fadeIn(400);
+                setTimeout(function() {
+                    $('#extraDescription2').fadeIn(400);
+                }, 600); // Delay for the second description
+                setTimeout(function() {
+                    $('#extraDescription3').fadeIn(400);
+                }, 1200); // Delay for the third description
+            });
+
+            $('#whyUS').click(function() {
+                $('#chooseUs').text('We stand out because of our customer support, innovative features, and reliability');
+            });
+
+            // Hover effect for Learn More button
+            $('#learnMore').hover(
+                function() {
+                    $(this).css('background-color', '#CBD2A4').css('color', '#54473F');
+                },
+                function(){
+                    $(this).css('background-color', '').css('color', '');
+                }
+            );
+
+            // Form validation and submission handling
+            $('#contactForm').submit(function(e) {
+                e.preventDefault();
+                const name = $('#name').val();
+                const email = $('#email').val();
+                
+                if (name && email) {
+                    $('#formMessage').text(`Thank you, ${name}. We will contact you at ${email}.`).addClass('text-success');
+                } else {
+                    $('#formMessage').text('Please fill out the form completely.').addClass('text-danger');
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
